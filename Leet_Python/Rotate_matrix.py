@@ -28,7 +28,19 @@ print(Solution2().rotate(matrix))
 
 
 # In[30]:
+class Solution:
+    def rotate(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: void Do not return anything, modify matrix in-place instead.
+        """
+        if not matrix:
+            return
 
+        nrow = len(matrix)
+        ncol = len(matrix[0])
+        matrix[:] = [[matrix[i][j] for i in range(nrow-1,-1,-1)] for j in range(ncol)]
+        
 
 
 
